@@ -1,0 +1,17 @@
+<h1>Countries List</h1>
+
+<table border="1">
+    <tr>
+        <th>Flag</th>
+        <th>Name</th>
+        <th>Capital</th>
+    </tr>
+
+    <% @countries.each do |country| %>
+        <tr>
+            <td><img src="<%= country['flags']['png'] %>" alt="Flag" width="50"></td>
+            <td><%= country['name']['common'] %></td>
+            <td><%= country['capital'] ? country['capital'].first : 'N/A' %></td>
+        </tr>
+    <% end %>
+</table>
