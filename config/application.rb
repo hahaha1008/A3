@@ -6,6 +6,15 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+%w[
+  action_controller/railtie
+  action_view/railtie
+  action_mailer/railtie
+  active_job/railtie
+  action_cable/engine
+].each { |framework| require framework }
+
+
 module MyFirstApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
