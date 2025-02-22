@@ -27,10 +27,15 @@ module MyFirstApp
 
     config.active_record.initialize_database = false if Rails.env.production?
 
-    config.api_only = true # If you're building an API-only app
     config.active_record.belongs_to_required_by_default = false
 
+    config.generators do |g|
+      g.orm :none
+    end
 
+    config.middleware.use ActionDispatch::Flash
+
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
