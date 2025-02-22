@@ -9,8 +9,13 @@ class Country
     response.success? ? response.parsed_response : []
   end
 
-  def self.search(name)
-    response = get("/name/#{name}")
+  def self.search(query)
+    response = get("/name/#{query}")
     response.success? ? response.parsed_response : []
+  end
+
+  def self.find_by_code(code)
+    response = get("/alpha/#{code}")
+    response.success? ? response.parsed_response.first : nil
   end
 end

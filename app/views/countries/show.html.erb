@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-dark text-white text-center">
+      <h2><%= @country['name']['common'] %> 🇺🇳</h2>
+    </div>
+    <div class="card-body text-center">
+      <img src="<%= @country['flags']['png'] %>" alt="Flag" class="img-fluid rounded shadow-sm" width="200">
+
+      <table class="table table-striped mt-4">
+        <tbody>
+          <tr><th>🌎 Official Name</th><td><%= @country['name']['official'] %></td></tr>
+          <tr><th>🏛 Capital</th><td><%= @country['capital'] ? @country['capital'].first : 'N/A' %></td></tr>
+          <tr><th>🗺 Region</th><td><%= @country['region'] %></td></tr>
+          <tr><th>👥 Population</th><td><%= number_with_delimiter(@country['population']) %></td></tr>
+          <tr><th>💰 Currency</th><td><%= @country['currencies']&.values&.first&.fetch("name", "N/A") %></td></tr>
+          <tr><th>🗣 Languages</th><td><%= @country['languages']&.values&.join(", ") %></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-footer text-center">
+      <a href="<%= countries_path %>" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back to List
+      </a>
+    </div>
+  </div>
+</div>
