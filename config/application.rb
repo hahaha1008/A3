@@ -25,6 +25,12 @@ module MyFirstApp
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
+    config.active_record.initialize_database = false if Rails.env.production?
+
+    config.api_only = true # If you're building an API-only app
+    config.active_record.belongs_to_required_by_default = false
+
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
