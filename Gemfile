@@ -55,6 +55,11 @@ group :development do
   gem "web-console"
 end
 
+group :development, :test do
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "sqlite3", ">= 2.1"
+end
+
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
