@@ -25,8 +25,6 @@ module MyFirstApp
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
-    config.active_record.initialize_database = false if Rails.env.production?
-
     config.active_record.belongs_to_required_by_default = false
 
     config.generators do |g|

@@ -12,4 +12,10 @@ test:
   database: storage/test.sqlite3
 
 production:
-  adapter: null
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: your_database_name
+  username: your_database_username
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: your_database_host
