@@ -15,7 +15,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: your_database_name
-  username: your_database_username
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: your_database_host
+  database: rails_db_5wxe
+  username: rails_db_5wxe_user
+  ppassword: <%= ENV['DATABASE_PASSWORD'] %>
+  host: dpg-cut2aflumphs73cektng-a
