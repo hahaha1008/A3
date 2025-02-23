@@ -17,6 +17,7 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "sqlite3"
 gem 'mini_racer', platforms: :ruby
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
@@ -59,8 +60,9 @@ end
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem "sqlite3", ">= 2.1"
+
 end
+
 
 
 group :test do
