@@ -20,10 +20,13 @@ production:
     username: rails_db_5wxe_user
     password: <%= ENV['DATABASE_PASSWORD'] %>
     host: dpg-cut2aflumphs73cektng-a
-    port: <%= ENV.fetch("DATABASE_PORT", 5432) %>  # Optional: specify the port if needed
+    port: <%= ENV.fetch("DATABASE_PORT", 5432) %>
 
   cable:
     <<: *primary_config
 
   queue:
+    <<: *primary_config
+
+  cache:
     <<: *primary_config
